@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Dhobi Cart - {{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="{{ url_for('index') }}" class="text-gray-800 text-xl font-semibold">Solar Dhobi Cart</a>
+                </div>
+                <div>
+                    <a href="{{ url_for('dashboard') }}" class="text-gray-800 hover:text-gray-600">Dashboard</a>
+                    <a href="{{ url_for('order') }}" class="ml-4 text-gray-800 hover:text-gray-600">Place Order</a>
+                    <!-- Add more navigation links as needed -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-6 py-8">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="bg-white shadow-md mt-16">
+        <div class="container mx-auto px-6 py-4">
+            <p class="text-center text-gray-600 text-sm">
+                &copy; {{ current_year }} Solar Dhobi Cart. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+    <!-- Include other scripts if necessary -->
+</body>
+</html>
